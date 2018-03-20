@@ -8,26 +8,26 @@ Can you solve it without using extra space?
 */
 
 const detectCycle = (head) => {
-  let slow = head;
-  let fast = head;
-  
+  let slow = head
+  let fast = head
+
   while (fast && fast.next) {
-      slow = slow.next;
-      fast = fast.next.next;
-      if (slow === fast) {
-          break;
-      }
+    slow = slow.next
+    fast = fast.next.next
+    if (slow === fast) {
+      break
+    }
   }
-  
+
   if (!fast || !fast.next) {
-      return null;
+    return null
   }
-  
-  slow = head;
+
+  slow = head
   while (slow !== fast) {
-      slow = slow.next;
-      fast = fast.next;
+    slow = slow.next
+    fast = fast.next
   }
-  
-  return fast;
+
+  return fast
 }

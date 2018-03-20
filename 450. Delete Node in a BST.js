@@ -45,31 +45,31 @@ Another valid answer is [5,2,6,null,4,null,7].
 
 const deleteNode = (root, key) => {
   if (!root) {
-    return null;
+    return null
   }
 
   if (root.val > key) {
-    root.left = deleteNode(root.left, key);
+    root.left = deleteNode(root.left, key)
   } else if (root.val < key) {
-    root.right = deleteNode(root.right, key);
+    root.right = deleteNode(root.right, key)
   } else {
     if (!root.left) {
-      return root.right;
+      return root.right
     }
 
     if (!root.right) {
-      return root.left;
+      return root.left
     }
 
-    let minNode = findMin(root.right);
-    root.val = minNode.val;
-    root.right = deleteNode(root.right, root.val);
+    let minNode = findMin(root.right)
+    root.val = minNode.val
+    root.right = deleteNode(root.right, root.val)
   }
-};
+}
 
 const findMin = (node) => {
   while (node && node.left) {
-    node = node.left;
+    node = node.left
   }
-  return node;
-};
+  return node
+}

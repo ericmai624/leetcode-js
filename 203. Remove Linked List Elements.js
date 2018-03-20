@@ -20,25 +20,25 @@ Return: 1 --> 2 --> 3 --> 4 --> 5
 
 const removeElements = (head, val) => {
   if (!head) {
-    return [];
+    return []
   }
 
   if (head.val === val) {
-    head = head.next;
-    return removeElements(head, val);
+    head = head.next
+    return removeElements(head, val)
   }
 
-  let node = head;
+  let node = head
 
   while (node && node.next) {
     if (node.next && node.next.val === val) {
-      let removed = node.next;
-      node.next = node.next.next;
-      removed.next = null;
+      let removed = node.next
+      node.next = node.next.next
+      removed.next = null
     } else {
-      node = node.next;
+      node = node.next
     }
   }
 
-  return head;
-};
+  return head
+}

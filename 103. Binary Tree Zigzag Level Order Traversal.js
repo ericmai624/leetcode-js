@@ -17,43 +17,43 @@ return its zigzag level order traversal as:
 */
 
 const zigzagLevelOrder = root => {
-  let res = [];
+  let res = []
 
-  if (!root) { return res; }
-  
-  let currDepth = 1;
-  let tmp = [];
-  let q = [];
-  root.depth = currDepth;
-  q.push(root);
+  if (!root) { return res }
+
+  let currDepth = 1
+  let tmp = []
+  let q = []
+  root.depth = currDepth
+  q.push(root)
 
   while (q.length) {
-    let node = q.shift();
+    let node = q.shift()
     if (node.depth > currDepth) {
-      res.push(tmp);
-      tmp = [];
-      currDepth = node.depth;
+      res.push(tmp)
+      tmp = []
+      currDepth = node.depth
     }
 
     if (node.depth % 2 !== 0) {
-      tmp.push(node.val);
+      tmp.push(node.val)
     } else {
-      tmp.unshift(node.val);
+      tmp.unshift(node.val)
     }
 
     if (node.left) {
-      node.left.depth = currDepth + 1;
-      q.push(node.left);
+      node.left.depth = currDepth + 1
+      q.push(node.left)
     }
     if (node.right) {
-      node.right.depth = currDepth + 1;
-      q.push(node.right);
+      node.right.depth = currDepth + 1
+      q.push(node.right)
     }
   }
 
   if (tmp.length) {
-    res.push(tmp);
+    res.push(tmp)
   }
 
-  return res;
-};
+  return res
+}

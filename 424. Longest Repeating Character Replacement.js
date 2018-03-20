@@ -1,7 +1,7 @@
 /*
-Given a string that consists of only uppercase English letters, 
-you can replace any letter in the string with another letter at most k times. 
-Find the length of a longest substring containing all repeating letters you can 
+Given a string that consists of only uppercase English letters,
+you can replace any letter in the string with another letter at most k times.
+Find the length of a longest substring containing all repeating letters you can
 get after performing the above operations.
 
 Note:
@@ -36,25 +36,25 @@ The substring "BBBB" has the longest repeating letters, which is 4.
  * @return {number}
  */
 const characterReplacement = (s, k) => {
-  let count = Array(26).fill(0);
-  let max = 0;
-  let res = 0;
-  let a = 'A'.charCodeAt(0);
-  let l = 0;
-  
+  let count = Array(26).fill(0)
+  let max = 0
+  let res = 0
+  let a = 'A'.charCodeAt(0)
+  let l = 0
+
   for (let r = 0; r < s.length; r++) {
-      let c = s.charCodeAt(r);
-      count[c - a]++;
-      max = Math.max(max, count[c - a]);
-      while (r - l + 1 - max > k) {
-          count[s.charCodeAt(l) - a]--;
-          if (s[l] === s[r]) {
-              max = Math.max.apply(null, count);
-          }
-          l++;
+    let c = s.charCodeAt(r)
+    count[c - a]++
+    max = Math.max(max, count[c - a])
+    while (r - l + 1 - max > k) {
+      count[s.charCodeAt(l) - a]--
+      if (s[l] === s[r]) {
+        max = Math.max.apply(null, count)
       }
-      res = Math.max(res, r - l + 1);
+      l++
+    }
+    res = Math.max(res, r - l + 1)
   }
-  
-  return res;
-};
+
+  return res
+}

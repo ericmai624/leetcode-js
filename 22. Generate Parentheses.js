@@ -13,25 +13,25 @@ For example, given n = 3, a solution set is:
 */
 
 const generateParenthesis = n => {
-  let res = [];
+  let res = []
 
-  gen(res, n);
+  gen(res, n)
 
-  return res;
-};
+  return res
+}
 
 const gen = (res, n, left = 0, right = 0, depth = 0, str = '') => {
   if (depth === n * 2) {
-    res.push(str);
-    return;
+    res.push(str)
+    return
   }
 
   if (left < n) {
-    gen(res, n, left + 1, right, depth + 1, str + '(');
+    gen(res, n, left + 1, right, depth + 1, str + '(')
   }
   if (left > right) {
-    gen(res, n, left, right + 1, depth + 1, str + ')');
+    gen(res, n, left, right + 1, depth + 1, str + ')')
   }
-};
+}
 
-console.log(generateParenthesis(3));
+console.log(generateParenthesis(3))

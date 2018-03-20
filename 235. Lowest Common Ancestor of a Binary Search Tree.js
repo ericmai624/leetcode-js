@@ -28,9 +28,9 @@ For example, the lowest common ancestor (LCA) of nodes 2 and 8 is 6. Another exa
  */
 const lowestCommonAncestor = (root, p, q) => {
   if (p.val < root.val && q.val < root.val) {
-      return lowestCommonAncestor(root.left, p, q);
+    return lowestCommonAncestor(root.left, p, q)
   } else if (p.val > root.val && q.val > root.val) {
-      return lowestCommonAncestor(root.right, p, q);
+    return lowestCommonAncestor(root.right, p, q)
   }
-  return root;
-};
+  return root
+}

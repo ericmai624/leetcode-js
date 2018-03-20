@@ -11,19 +11,18 @@ Follow up: Could you improve it to O(n log n) time complexity?
 */
 
 const lengthOfLIS = nums => {
-  let curr = res = len = 0;
-  let sorted = nums.sort((a, b) => a - b);
+  let curr = res = len = 0
+  let sorted = nums.sort((a, b) => a - b)
 
   for (let i = 0; i < sorted.length; i++) {
-    let diff = sorted[i] - curr;
+    let diff = sorted[i] - curr
     if (diff > res) {
-      res = diff;
-      len++;
+      res = diff
+      len++
     }
   }
 
-  return len;
-};
+  return len
+}
 
-const s = [10, 9, 2, 5, 3, 7, 101, 18]; // => 4
-
+const s = [10, 9, 2, 5, 3, 7, 101, 18] // => 4

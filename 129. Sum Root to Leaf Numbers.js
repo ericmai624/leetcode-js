@@ -10,25 +10,25 @@
  * @return {number}
  */
 const sumNumbers = root => {
-  let sum = 0;
+  let sum = 0
 
   const dfs = (node, digitStr) => {
-    if (!node) { return; }
+    if (!node) { return }
     if (!node.left && !node.right) {
-      digitStr += node.val;
-      sum += Number(digitStr);
-      return;
+      digitStr += node.val
+      sum += Number(digitStr)
+      return
     }
 
     if (node.left) {
-      dfs(node.left, digitStr + node.val);
+      dfs(node.left, digitStr + node.val)
     }
     if (node.right) {
-      dfs(node.right, digitStr + node.val);
+      dfs(node.right, digitStr + node.val)
     }
-  };
+  }
 
-  dfs(root, '');
+  dfs(root, '')
 
-  return sum;
-};
+  return sum
+}

@@ -10,21 +10,21 @@ You may assume that the array is non-empty and the majority element always exist
  */
 
 const majorityElement = (nums) => {
-  let major = 0;
-  let count = 1;
-  
+  let major = 0
+  let count = 1
+
   for (let i = 1; i < nums.length; i++) {
-      if (nums[i] === nums[major]) {
-          count++;
-      } else {
-          count--;
-      }
-      
-      if (!count) {
-          major = i;
-          count = 1;
-      }
+    if (nums[i] === nums[major]) {
+      count++
+    } else {
+      count--
+    }
+
+    if (!count) {
+      major = i
+      count = 1
+    }
   }
-  
-  return nums[major];
-};
+
+  return nums[major]
+}

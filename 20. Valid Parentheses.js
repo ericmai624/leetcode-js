@@ -5,26 +5,26 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 */
 
 const isValid = (s) => {
-  let stack = [];
+  let stack = []
   let pairs = {
     '(': ')',
     '[': ']',
     '{': '}'
-  };
+  }
 
   for (let i = 0; i < s.length; i++) {
-    let char = s[i];
+    let char = s[i]
     if (pairs[char]) {
-      stack.push(pairs[char]);
+      stack.push(pairs[char])
     } else if (!pairs[char] && stack.pop() !== char) {
-      return false;
+      return false
     }
   }
 
-  return stack.length === 0;
-};
+  return stack.length === 0
+}
 
-console.log(isValid('()[]{}'));
-console.log(isValid('([)]{}'));
-console.log(isValid('['));
-console.log(isValid(']'));
+console.log(isValid('()[]{}'))
+console.log(isValid('([)]{}'))
+console.log(isValid('['))
+console.log(isValid(']'))

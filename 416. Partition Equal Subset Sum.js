@@ -1,5 +1,5 @@
 /*
-Given a non-empty array containing only positive integers, 
+Given a non-empty array containing only positive integers,
 find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
 
 Note:
@@ -22,23 +22,23 @@ Explanation: The array cannot be partitioned into equal sum subsets.
 */
 
 const canPartition = nums => {
-  let sumTotal = nums.reduce((a, b) => a + b);
+  let sumTotal = nums.reduce((a, b) => a + b)
   if (sumTotal % 2 === 1) {
-    return false;
+    return false
   }
-  let n = nums.length;
+  let n = nums.length
 
-  return isSubsetSum(nums, n, sumTotal / 2);
-};
+  return isSubsetSum(nums, n, sumTotal / 2)
+}
 
 const isSubsetSum = (arr, n, sum) => {
   if (sum === 0) {
-    return true;
+    return true
   } else if (n === 0 && sum !== 0) {
-    return false;
+    return false
   } else if (arr[n - 1] > sum) {
-    return isSubsetSum(arr, n - 1, sum);
+    return isSubsetSum(arr, n - 1, sum)
   }
 
-  return isSubsetSum(arr, n - 1, sum) || isSubsetSum(arr, n - 1, sum - arr[n - 1]);
-};
+  return isSubsetSum(arr, n - 1, sum) || isSubsetSum(arr, n - 1, sum - arr[n - 1])
+}

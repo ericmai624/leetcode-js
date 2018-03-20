@@ -20,10 +20,10 @@ Binary tree [1,2,3], return false.
 
 const isValidBST = (root, l = Infinity, r = -Infinity) => {
   if (!root) {
-    return true;
+    return true
   } else if (root.val >= l || root.val <= r) {
-    return false;
+    return false
   }
 
-  return isValidBST(root.left, root.val, r) && isValidBST(root.right, l, root.val);
-};
+  return isValidBST(root.left, root.val, r) && isValidBST(root.right, l, root.val)
+}

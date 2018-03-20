@@ -1,10 +1,8 @@
 /*
-Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, 
+Given n non-negative integers representing the histogram's bar height where the width of each bar is 1,
 find the area of largest rectangle in the histogram.
 
-
 Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
-
 
 The largest rectangle is shown in the shaded area, which has area = 10 unit.
 
@@ -19,27 +17,27 @@ return 10.
  */
 
 const largestRectangleArea = heights => {
-  let area = 0;
-  
+  let area = 0
+
   if (!heights || !heights.length) {
-    return area;
+    return area
   }
 
-  let stack = [];
+  let stack = []
 
   for (let i = 0; i < heights.length; i++) {
     if (!stack.length || heights[i] >= heights[stack[stack.length - 1]]) {
-      stack.push(i);
+      stack.push(i)
     } else {
-      let height = heights[stack.pop()];
-      let width = stack.length === 0 ? i : i - stack[stack.length - 1] - 1;
-      area = Math.max(height * width, area);
-      i--;
+      let height = heights[stack.pop()]
+      let width = stack.length === 0 ? i : i - stack[stack.length - 1] - 1
+      area = Math.max(height * width, area)
+      i--
     }
   }
 
-  return area;
-};
+  return area
+}
 
 // console.log(largestRectangleArea([2, 1, 5, 6, 2, 3]));
-console.log(largestRectangleArea([4, 6, 7, 5, 6, 3]));
+console.log(largestRectangleArea([4, 6, 7, 5, 6, 3]))

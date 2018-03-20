@@ -19,4 +19,4 @@ One possible longest palindromic subsequence is "bb".
 
 const longestPalindromeSubseq = s => {
 
-};
+}

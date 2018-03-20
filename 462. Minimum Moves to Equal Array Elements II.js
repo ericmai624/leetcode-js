@@ -18,17 +18,17 @@ Only two moves are needed (remember each move increments or decrements one eleme
 */
 
 const minMoves2 = nums => {
-  let sorted = nums.sort((a, b) => (a - b));
-  let midIndex = Math.floor(sorted.length / 2);
-  let mid = sorted[midIndex];
-  let res = 0;
+  let sorted = nums.sort((a, b) => (a - b))
+  let midIndex = Math.floor(sorted.length / 2)
+  let mid = sorted[midIndex]
+  let res = 0
 
   for (let i = 0; i < sorted.length; i++) {
-    let value = sorted[i];
-    res += Math.abs(value - mid);
+    let value = sorted[i]
+    res += Math.abs(value - mid)
   }
 
-  return res;
-};
+  return res
+}
 
-console.log(minMoves2([1, 2, 3]));
+console.log(minMoves2([1, 2, 3]))

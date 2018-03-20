@@ -12,26 +12,26 @@ canConstruct("aa", "aab") -> true
 */
 
 const canConstruct = (ransomNote, magazine) => {
-  let res = true;
-  let map = {};
+  let res = true
+  let map = {}
 
   for (let i = 0; i < magazine.length; i++) {
-    let key = magazine[i];
-    map[key] ? map[key]++ : map[key] = 1;
+    let key = magazine[i]
+    map[key] ? map[key]++ : map[key] = 1
   }
 
   for (let j = 0; j < ransomNote.length; j++) {
-    let char = ransomNote[j];
+    let char = ransomNote[j]
     if (!map[char]) {
-      res = false;
-      break;
+      res = false
+      break
     }
-    map[char]--;
+    map[char]--
   }
 
-  return res;
-};
+  return res
+}
 
-console.log(canConstruct('a', 'b'));
-console.log(canConstruct('aa', 'ab'));
-console.log(canConstruct('aa', 'aab'));
+console.log(canConstruct('a', 'b'))
+console.log(canConstruct('aa', 'ab'))
+console.log(canConstruct('aa', 'aab'))

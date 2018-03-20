@@ -16,24 +16,24 @@ Try to do this in one pass.
  * @return {ListNode}
  */
 const removeNthFromEnd = (head, n) => {
-  let dummy = new ListNode(0);
-  dummy.next = head;
-  let curr = dummy;
-  let k = 1;
-  let stack = [];
-  let node;
+  let dummy = new ListNode(0)
+  dummy.next = head
+  let curr = dummy
+  let k = 1
+  let stack = []
+  let node
 
   while (curr) {
-    stack.push(curr);
-    curr = curr.next;
+    stack.push(curr)
+    curr = curr.next
   }
 
   while (k <= n) {
-    node = stack.pop();
-    k++;
+    node = stack.pop()
+    k++
   }
 
-  curr = stack.pop();
-  curr.next = node.next;
-  return dummy.next;
-};
+  curr = stack.pop()
+  curr.next = node.next
+  return dummy.next
+}

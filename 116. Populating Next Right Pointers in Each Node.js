@@ -42,20 +42,20 @@ After calling your function, the tree should look like:
  * @return {void} Do not return anything, modify tree in-place instead.
  */
 const connect = (root) => {
-  let curr = [];
-  let next = [];
-  curr.push(root);
-  
+  let curr = []
+  let next = []
+  curr.push(root)
+
   while (curr.length) {
-      for (let i = 0; i < curr.length; i++) {
-          if (curr[i]) {
-              curr[i].next = curr[i + 1] || null;
-              next.push(curr[i].left);
-              next.push(curr[i].right);
-          }
+    for (let i = 0; i < curr.length; i++) {
+      if (curr[i]) {
+        curr[i].next = curr[i + 1] || null
+        next.push(curr[i].left)
+        next.push(curr[i].right)
       }
-      
-      curr = next;
-      next = [];
+    }
+
+    curr = next
+    next = []
   }
-};
+}

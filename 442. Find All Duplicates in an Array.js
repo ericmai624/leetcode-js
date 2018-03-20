@@ -14,16 +14,16 @@ Output:
 */
 
 const findDuplicates = a => {
-    let res = [];
+  let res = []
 
-    for (let i = 0; i < a.length; i++) {
-        let index = Math.abs(a[i]) - 1;
-        if (a[index] > 0) {
-            a[index] *= -1;
-        } else {
-            res.push(Math.abs(a[i]));
-        }
+  for (let i = 0; i < a.length; i++) {
+    let index = Math.abs(a[i]) - 1
+    if (a[index] > 0) {
+      a[index] *= -1
+    } else {
+      res.push(Math.abs(a[i]))
     }
-    
-    return res;
-};
+  }
+
+  return res
+}

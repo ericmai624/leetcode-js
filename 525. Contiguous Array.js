@@ -17,19 +17,19 @@ Note: The length of the given binary array will not exceed 50,000.
  * @return {number}
  */
 const findMaxLength = (nums) => {
-  let count = 0;
-  let hashMap = { 0: 0 };
-  let res = 0;
-  
+  let count = 0
+  let hashMap = { 0: 0 }
+  let res = 0
+
   for (let i = 0; i < nums.length; i++) {
-      let val = nums[i];
-      val ? count++ : count--;
-      if (hashMap[count] !== undefined) {
-          res = Math.max(res, i - hashMap[count] + 1);
-      } else {
-          hashMap[count] = i + 1;
-      }
+    let val = nums[i]
+    val ? count++ : count--
+    if (hashMap[count] !== undefined) {
+      res = Math.max(res, i - hashMap[count] + 1)
+    } else {
+      hashMap[count] = i + 1
+    }
   }
-  
-  return res;
-};
+
+  return res
+}

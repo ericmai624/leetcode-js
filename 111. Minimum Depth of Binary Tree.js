@@ -5,34 +5,34 @@ The minimum depth is the number of nodes along the shortest path from the root n
 */
 
 const minDepth = root => {
-  if (!root) { return 0; }
-  
-  let res = 1;
-  let currLevel = [];
-  let nextLevel = [];
-  currLevel.push(root);
+  if (!root) { return 0 }
+
+  let res = 1
+  let currLevel = []
+  let nextLevel = []
+  currLevel.push(root)
 
   while (currLevel.length) {
     for (let i = 0; i < currLevel.length; i++) {
-      let node = currLevel.shift();
+      let node = currLevel.shift()
       if (!node.left && !node.right) {
-        return res;
+        return res
       }
 
       if (node.left) {
-        nextLevel.push(node.left);
+        nextLevel.push(node.left)
       }
 
       if (node.right) {
-        nextLevel.push(node.right);
+        nextLevel.push(node.right)
       }
-      i--;
+      i--
     }
 
-    currLevel = nextLevel;
-    nextLevel = [];
-    res++;
+    currLevel = nextLevel
+    nextLevel = []
+    res++
   }
 
-  return res;
-};
+  return res
+}

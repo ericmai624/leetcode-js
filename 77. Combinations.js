@@ -15,28 +15,28 @@ If n = 4 and k = 2, a solution is:
 */
 
 const combine = (n, k) => {
-  let res = [];
+  let res = []
 
-  getCombos(n, k, res);
+  getCombos(n, k, res)
 
-  return res;
-};
+  return res
+}
 
 const getCombos = (n, k, result, output = [], curr = 1) => {
   if (output.length === k) {
-    result.push(output.slice());
-    return;
+    result.push(output.slice())
+    return
   }
 
   if (curr > n) {
-    return;
+    return
   }
 
-  output.push(curr);
-  getCombos(n, k, result, output, curr + 1);
-  output.pop();
-  getCombos(n, k, result, output, curr + 1);
-};
+  output.push(curr)
+  getCombos(n, k, result, output, curr + 1)
+  output.pop()
+  getCombos(n, k, result, output, curr + 1)
+}
 
-console.log(combine(4, 2));
-console.log(combine(2, 1));
+console.log(combine(4, 2))
+console.log(combine(2, 1))
