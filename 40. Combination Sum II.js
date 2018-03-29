@@ -17,6 +17,31 @@ A solution set is:
 ]
 */
 
-const combinationSum2 = (candidates, target) => {
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
 
-}
+const dfs = (res, nums, set, target, idx = 0) => {
+  if (target === 0) {
+      res.push(set);
+      return;
+  } 
+  if (target < 0) return;
+  
+  for (let i = idx; i < nums.length; i++) {
+      if (i > idx && nums[i] === nums[i - 1]) {
+          continue;
+      }
+      dfs(res, nums, set.concat(nums[i]), target - nums[i], i + 1);
+  }
+};
+
+const combinationSum2 = (candidates, target) => {
+  let res = [];
+  
+  dfs(res, candidates.sort((a, b) => a - b), [], target);
+  
+  return res;
+};
