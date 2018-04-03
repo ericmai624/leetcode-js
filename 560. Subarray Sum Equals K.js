@@ -14,7 +14,8 @@ The range of numbers in the array is [-1000, 1000] and the range of the integer 
  * @param {number} k
  * @return {number}
  */
-var subarraySum = function(nums, k) {
+
+const subarraySum = (nums, k) => {
   let map = { 0: 1 };
   let sum = 0;
   let res = 0;
